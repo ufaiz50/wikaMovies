@@ -34,8 +34,8 @@ class ActorViewModel extends ViewModel
     {
         return collect($this->social)->merge([
             'twitter' => $this->social['twitter_id'] ? 'https://twitter.com/'.$this->social['twitter_id'] : null,
-            'facebook' => $this->social['facebook_id'] ? 'https://twitter.com/'.$this->social['facebook_id'] : null,
-            'instagram' => $this->social['instagram_id'] ? 'https://twitter.com/'.$this->social['instagram_id'] : null,
+            'facebook' => $this->social['facebook_id'] ? 'https://facebook.com/'.$this->social['facebook_id'] : null,
+            'instagram' => $this->social['instagram_id'] ? 'https://instagram.com/'.$this->social['instagram_id'] : null,
 
         ]);
     }
