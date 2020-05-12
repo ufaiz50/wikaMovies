@@ -1,11 +1,11 @@
 @extends('layouts.main')
 
 @section('content')
-<div class="movie-info border-b border-gray-800">
+<div class="tv-info border-b border-gray-800">
     <div class="container mx-auto px-4 py-16 flex flex-col md:flex-row">
-        <img src="{{ $movie['poster_path'] }}" alt="poster" class="w-64 lg:w-96">
+        <img src="{{ $tvshow['poster_path'] }}" alt="poster" class="w-64 lg:w-96">
         <div class="md:ml-24">
-            <h2 class="text-4xl semi-bold">{{ $movie['title'] }}</h2>
+            <h2 class="text-4xl semi-bold">{{ $tvshow['name'] }}</h2>
             <div class="flex flex-wrap items-center text-gray-400 text-sm">
                 <svg height="8pt" viewBox="0 -10 511.986 511" width="8pt" xmlns="http://www.w3.org/2000/svg">
                     <path
@@ -14,19 +14,19 @@
                     <path
                         d="M114.617 491.137a27.161 27.161 0 01-15.957-5.184c-8.855-6.398-12.992-17.43-10.582-28.094l32.938-145.066L9.312 214.828a27.196 27.196 0 01-7.976-28.906 27.228 27.228 0 0123.402-18.73l147.82-13.419 58.41-136.746C235.279 6.98 245.09.492 255.993.492c10.903 0 20.715 6.488 25.024 16.512l58.41 136.77 147.797 13.417c10.882.98 20.054 8.344 23.425 18.711 3.372 10.387.254 21.739-7.98 28.907l-111.68 97.941 32.938 145.066c2.414 10.668-1.727 21.696-10.578 28.094-8.813 6.38-20.567 6.914-29.891 1.324l-127.465-76.16-127.445 76.203a27.021 27.021 0 01-13.93 3.86zm141.375-112.871c4.844 0 9.64 1.3 13.953 3.859l120.278 71.938-31.086-136.942a27.191 27.191 0 018.62-26.516l105.473-92.523-139.543-12.672a27.099 27.099 0 01-22.593-16.469L255.992 39.895 200.844 168.96c-3.903 9.238-12.563 15.531-22.59 16.43l-139.52 12.671 105.47 92.52c7.554 6.594 10.839 16.77 8.62 26.54l-31.082 136.94 120.278-71.937c4.328-2.559 9.128-3.86 13.972-3.86zM171.406 156.44v.02zm169.153-.066v0zm0 0" />
                 </svg>
-                <span class="ml-1">{{ $movie['vote_average'] }}</span>
+                <span class="ml-1">{{ $tvshow['vote_average'] }}</span>
                 <span class="mx-2">|</span>
-                <span>{{ $movie['release_date'] }}</span>
+                <span>{{ $tvshow['first_air_date'] }}</span>
                 <span class="mx-2">|</span>
-                <span>{{ $movie['genres'] }}</span>
+                <span>{{ $tvshow['genres'] }}</span>
             </div>
             <p class="text-gray-300 mt-8">
-                {{ $movie['overview']}}
+                {{ $tvshow['overview']}}
             </p>
             <div class="mt-12">
                 <h4 class="text-white font-semibold">Featured Cast</h4>
                 <div class="flex mt-4">
-                    @foreach($movie['crew'] as $crew)
+                    @foreach($tvshow['crew'] as $crew)
                     <div class="mr-8">
                         <div>{{ $crew['name'] }}</div>
                         <div class="text-sm text-gray-400">{{ $crew['job'] }}</div>
@@ -35,7 +35,7 @@
                 </div>
             </div>
             <div x-data="{ isOpen: false }">
-                @if(count($movie['videos']['results']) > 0 )
+                @if(count($tvshow['videos']['results']) > 0 )
                 <div class="mt-12">
                     <button @click="isOpen = true" class="flex inline-flex items-center bg-orange-500 text-gray-900 rounded font-semibold px-5
                             py-4 hover:bg-orange-600 transition ease-in-out duration-150">
@@ -65,7 +65,7 @@
                                 <div class="responsive-container overflow-hidden relative" style="padding-top: 56.25%">
                                     <iframe width="560" height="315"
                                         class="responsive-iframe absolute top-0 left-0 w-full h-full"
-                                        src="https://www.youtube.com/embed/{{ $movie['videos']['results'][0]['key'] }}"
+                                        src="https://www.youtube.com/embed/{{ $tvshow['videos']['results'][0]['key'] }}"
                                         style="border:0;" allow="autoplay; encrypted-media" allowfullscreen></iframe>
                                 </div>
                             </div>
@@ -75,13 +75,13 @@
             </div>
         </div>
     </div>
-</div> <!-- end Movie Info -->
+</div> <!-- end Tv Info -->
 
-<div class="movie-cast border-b border-gray-800">
+<div class="tv-cast border-b border-gray-800">
     <div class="container mx-auto px-4 py-16">
         <h2 class="text-4xl font-semibold">Cast</h2>
         <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8">
-            @foreach($movie['cast'] as $cast)
+            @foreach($tvshow['cast'] as $cast)
             <div class="mt-8">
                 <a href="{{ route('actors.show', $cast['id']) }}">
                     <img src="{{ $cast['profile_path'] }}" alt="actor"
@@ -97,13 +97,13 @@
             @endforeach
         </div>
     </div>
-</div> <!-- end Movie Cast -->
+</div> <!-- end Tv Cast -->
 
 <div class="movie-images" x-data="{ isOpen: false, image:'' }">
     <div class="container mx-auto px-4 py-16">
         <h2 class="text-4xl font-semibold">Images</h2>
         <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
-            @foreach($movie['images'] as $image)
+            @foreach($tvshow['images'] as $image)
             <div class="mt-8">
                 <button @click.prevent="
                             isOpen = true
@@ -131,6 +131,6 @@
             </div>
         </div>
     </div>
-</div> <!-- end Movie Images -->
+</div> <!--end Movie Images -->
 
 @endsection
