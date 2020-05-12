@@ -80,9 +80,9 @@
 <div class="tv-cast border-b border-gray-800">
     <div class="container mx-auto px-4 py-16">
         <h2 class="text-4xl font-semibold">Cast</h2>
-        <div class="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-4 lg:grid-cols-7 gap-8">
+        <div class="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-4 lg:grid-cols-7 gap-8 mb-8">
             @foreach($tvshow['cast'] as $cast)
-            <div class="mt-8">
+            <div class="mb-4">
                 <a href="{{ route('actors.show', $cast['id']) }}">
                     <img src="{{ $cast['profile_path'] }}" alt="actor"
                         class="hover:opacity-75 transition ease-in-out duration-150">
@@ -102,9 +102,9 @@
 <div class="movie-images" x-data="{ isOpen: false, image:'' }">
     <div class="container mx-auto px-4 py-16">
         <h2 class="text-4xl font-semibold">Images</h2>
-        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-8">
+        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-8 mb-8">
             @foreach($tvshow['images'] as $image)
-            <div class="mt-8">
+            <div class="mb-4">
                 <button @click.prevent="
                             isOpen = true
                             image='{{ 'https://image.tmdb.org/t/p/original/'.$image['file_path'] }}'">
