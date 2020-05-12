@@ -3,7 +3,7 @@
 @section('content')
 <div class="movie-info border-b border-gray-800">
     <div class="container mx-auto px-4 py-16 flex flex-col md:flex-row">
-        <img src="{{ $movie['poster_path'] }}" alt="poster" class="w-64 lg:w-96">
+        <img src="{{ $movie['poster_path'] }}" alt="poster" class="w-40 sm:w-48 md:w-64 lg:w-96">
         <div class="md:ml-24">
             <h2 class="text-4xl semi-bold">{{ $movie['title'] }}</h2>
             <div class="flex flex-wrap items-center text-gray-400 text-sm">
@@ -80,7 +80,7 @@
 <div class="movie-cast border-b border-gray-800">
     <div class="container mx-auto px-4 py-16">
         <h2 class="text-4xl font-semibold">Cast</h2>
-        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8">
+        <div class="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-4 lg:grid-cols-7 gap-8">
             @foreach($movie['cast'] as $cast)
             <div class="mt-8">
                 <a href="{{ route('actors.show', $cast['id']) }}">
@@ -102,7 +102,7 @@
 <div class="movie-images" x-data="{ isOpen: false, image:'' }">
     <div class="container mx-auto px-4 py-16">
         <h2 class="text-4xl font-semibold">Images</h2>
-        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+        <div class="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-4 lg:grid-cols-4 gap-8">
             @foreach($movie['images'] as $image)
             <div class="mt-8">
                 <button @click.prevent="

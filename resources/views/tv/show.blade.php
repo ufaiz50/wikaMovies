@@ -3,7 +3,7 @@
 @section('content')
 <div class="tv-info border-b border-gray-800">
     <div class="container mx-auto px-4 py-16 flex flex-col md:flex-row">
-        <img src="{{ $tvshow['poster_path'] }}" alt="poster" class="w-64 lg:w-96">
+        <img src="{{ $tvshow['poster_path'] }}" alt="poster" class="width w-64 sm:40 md:76 lg:w-96">
         <div class="md:ml-24">
             <h2 class="text-4xl semi-bold">{{ $tvshow['name'] }}</h2>
             <div class="flex flex-wrap items-center text-gray-400 text-sm">
@@ -80,7 +80,7 @@
 <div class="tv-cast border-b border-gray-800">
     <div class="container mx-auto px-4 py-16">
         <h2 class="text-4xl font-semibold">Cast</h2>
-        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8">
+        <div class="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-4 lg:grid-cols-7 gap-8">
             @foreach($tvshow['cast'] as $cast)
             <div class="mt-8">
                 <a href="{{ route('actors.show', $cast['id']) }}">
@@ -102,7 +102,7 @@
 <div class="movie-images" x-data="{ isOpen: false, image:'' }">
     <div class="container mx-auto px-4 py-16">
         <h2 class="text-4xl font-semibold">Images</h2>
-        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-8">
             @foreach($tvshow['images'] as $image)
             <div class="mt-8">
                 <button @click.prevent="

@@ -4,7 +4,7 @@
     <div class="container mx-auto px-4 pt-16">
         <div class="popular-movies">
             <h2 class="uppercase tracking-wider text-pink-500 text-lg font-semibold">Popular Movies</h2>
-            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8">
+            <div class="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-7 gap-8">
 
                 @foreach ($popularMovies as $movie)
                     <x-movie-card :movie="$movie" :genres="$genres"/>
@@ -15,7 +15,7 @@
 
         <div class="now-playing-movies py-24">
             <h2 class="uppercase tracking-wider text-pink-500 text-lg font-semibold">Now Playing Movies</h2>
-            <div class="grid grid-cols1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8">
+            <div class="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-7 gap-8">
                 @foreach ($nowPlayingMovies as $movie)
                     <x-movie-card :movie="$movie" />
                 @endforeach

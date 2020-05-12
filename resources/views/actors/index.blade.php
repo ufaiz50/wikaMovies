@@ -4,7 +4,7 @@
 <div class="container mx-auto px-4 py-16">
     <div class="popular-actors">
         <h2 class="uppercase tracking-wider text-pink-500 text-lg font-semibold">Popular Actors</h2>
-        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8">
+        <div class="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 gap-4">
             @foreach ($popularActors as $actor)
             <div class="actor mt-8">
                 <a href="{{ route('actors.show', $actor['id']) }}">

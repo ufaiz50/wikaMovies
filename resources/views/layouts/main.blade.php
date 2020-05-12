@@ -4,12 +4,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Movie App</title>
+    <title>Wika Movies</title>
+
 
     <link rel="stylesheet" href="/css/main.css">
     <livewire:styles>
         <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
-
+    <link rel="shortcut icon" href="/images/favicon.png" class="rounded-full">
 </head>
 
 <body class="font-sans bg-gray-900 text-white">
@@ -18,10 +19,10 @@
             <ul class="flex flex-col md:flex-row items-center">
                 <li>
                     <a href="{{ route('movies.index') }}">
-                        <img class="w-12 h-12 bg-white" src="/icon/begining.png" alt="begining">
+                        <img class="w-32 h-12 hover:bg-gray-800" src="/images/logo.png" alt="begining">
                     </a>
                 </li>
-                <li class="md:ml-16 mt-3 md:mt-0">
+                <li class="md:ml-6 mt-3 md:mt-0">
                     <a href="{{ route('movies.index') }}" class="hover:text-gray-300">Movies</a>
                 </li>
                 <li class="md:ml-6 mt-3 md:mt-0">
@@ -43,7 +44,7 @@
     </nav>
     @yield('content')
     <livewire:scripts>
-    @yield('scripts')
+        @yield('scripts')
 </body>
 
 </html>
