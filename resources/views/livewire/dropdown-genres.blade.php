@@ -4,7 +4,7 @@
     </button>
     <div class="relative">
         <div class="absolute top-0 bg-gray-800 rounded mt-4" style="width:28rem"
-        :class="{'hidden' : !itOpen}" 
+        :class="{ 'hidden': !itOpen }" 
         @click.away="itOpen = false"
         x-show="itOpen">
             <div class="grid grid-cols-4 gap-5 w-auto px-4 py-6">
