@@ -28,7 +28,7 @@
                         <p>Please Follow us on our Social Media Profile in order to keep updated.</p>
                         <a href="https://facebook.com/Wika-Movies-114137866971382" target="_blank"><i class="fa fa-facebook"></i></a>
                         <a href="" target="_blank"><i class="fa fa-twitter"></i></a>
-                        <a href="" target="_blank"><i class="fa fa-instagram"></i></a>
+                        <a href="https://www.instagram.com/wikamovies/" target="_blank"><i class="fa fa-instagram"></i></a>
                     </div>
                     <div class="col-md-3 col-sm-6 col-xs-12 segment-four ms-mb-30">
                         <h3>Our Newsletter </h3>
