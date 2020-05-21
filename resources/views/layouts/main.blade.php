@@ -4,7 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Web update Movies dan Tv show">
+    <meta name="description" 
+    content="Web update Movies dan Tv show berdasarkan themoviedb. 
+    Streaming Movie terupadate full hd, download Movie terupdate full hd">
     <title>Wika Movies</title>
 
 
