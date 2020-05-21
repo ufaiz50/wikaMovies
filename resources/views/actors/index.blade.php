@@ -4,7 +4,7 @@
 <div class="container mx-auto px-4 py-16">
     <div class="popular-actors">
         <h2 class="uppercase tracking-wider text-pink-500 text-lg font-semibold">Popular Actors</h2>
-        <div class="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 gap-4">
+        <div class="loadactor grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 gap-4">
             @foreach ($popularActors as $actor)
             <div class="actor mt-8">
                 <a href="{{ route('actors.show', $actor['id']) }}">
@@ -39,7 +39,7 @@
 @section('scripts')
 <script src="https://unpkg.com/infinite-scroll@3/dist/infinite-scroll.pkgd.min.js"></script>
 <script>
-var elem = document.querySelector('.grid');
+var elem = document.querySelector('.loadactor');
 var infScroll = new InfiniteScroll(elem, {
     // options
     path: '/actors/page/@{{#}}',
